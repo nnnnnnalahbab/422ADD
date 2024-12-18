@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 05</title>
+    <style>
+        table { border-collapse: collapse; width: 50%; margin: 50px auto; }
+        td { border: 1px solid #000; padding: 20px; text-align: center; }
+        .first { background: #c4d79b; } /* Light green */
+        .second { background: #f2b6a0; } /* Light pink */
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="first">First cell</td>
+            <td class="second">Second cell</td>
+        </tr>
+    </table>
+</body>
+</html>
