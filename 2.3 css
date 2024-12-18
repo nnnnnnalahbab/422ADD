@@ -1,0 +1,105 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: #fff;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title */
+.card-title {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Invisible Table for Alignment */
+.info-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Profile Picture */
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* User Info */
+.login-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Button */
+.contact-button button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-button button:hover {
+    background-color: #222;
+}
