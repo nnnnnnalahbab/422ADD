@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>It’s over 9000 (jQuery Only)</title>
+<style>
+  body {
+    background: #eee;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 50px;
+  }
+  input, select {
+    margin: 5px;
+    padding: 5px;
+    font-size: 1rem;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Totally Messy Calculator</h1>
+<input type="text" id="left" placeholder="Left operand"/>
+<select id="op">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+  <option value="%">%</option>
+</select>
+<input type="text" id="right" placeholder="Right operand"/>
+<input type="submit" value="Try me!" id="go"/>
+
+<script>
+$(function(){
+  const $left = $("#left");
+  const $right = $("#right");
+  const $op = $("#op");
+  const $go = $("#go");
+
+  // Use jQuery setInterval wrapper is not needed, but no direct DOM calls here anyway
+  setInterval(() => {
+    alert('Please, use me...');
+  }, 30000);
+
+  $go.on('click', function() {
+    const leftVal = $.trim($left.val());
+    const rightVal = $.trim($right.val());
+    const opVal = $op.val();
+
+    if(!isNonNegativeInteger(leftVal) || !isNonNegativeInteger(rightVal)){
+      alert("Error :(");
+      return;
+    }
+
+    const leftNum = parseInt(leftVal, 10);
+    const rightNum = parseInt(rightVal, 10);
+
+    if((opVal === '/' || opVal === '%') && rightNum === 0){
+      alert("It's over 9000!");
+      console.log("It's over 9000!");
+      return;
+    }
+
+    let result;
+    switch(opVal) {
+      case '+': result = leftNum + rightNum; break;
+      case '-': result = leftNum - rightNum; break;
+      case '*': result = leftNum * rightNum; break;
+      case '/': result = leftNum / rightNum; break;
+      case '%': result = leftNum % rightNum; break;
+    }
+
+    alert(result);
+    console.log(result);
+  });
+
+  function isNonNegativeInteger(val) {
+    return /^\d+$/.test(val);
+  }
+});
+</script>
+</body>
+</html>
