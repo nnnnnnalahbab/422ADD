@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Background (jQuery)</title>
+    <link rel="stylesheet" href="background.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Change Background Color</h1>
+        <p>Click the button below to generate a random background color!</p>
+        <button id="colorButton">Click me!</button>
+    </div>
+
+    <script>
+        // jQuery document ready
+        $(function() {
+            const $body = $("body");
+            const $button = $("#colorButton");
+            const $container = $(".container");
+
+            // Using a jQuery utility method to generate a random color
+            function getRandomColor() {
+                let letters = "0123456789ABCDEF";
+                let colorArr = [];
+                for (let i = 0; i < 6; i++) {
+                    colorArr.push(letters[Math.floor(Math.random()*16)]);
+                }
+                return "#" + colorArr.join('');
+            }
+
+            // Event using jQuery's .on() method
+            $button.on("click", function() {
+                let randomColor = getRandomColor();
+
+                // Set body background using jQuery
+                $body.css("background-color", randomColor);
+
+                // Update button text using jQuery
+                $(this).text("Color: " + randomColor);
+
+                // Just show off some extra jQuery: animate the container's box-shadow on click
+                $container.stop().animate({
+                    boxShadow: "0 0 20px " + randomColor
+                }, 500, function() {
+                    // After animation, revert to original box-shadow with another animation
+                    $container.animate({
+                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)"
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
