@@ -1,0 +1,58 @@
+(function(){
+  const ftList = document.getElementById('ft_list');
+  const newBtn = document.getElementById('newBtn');
+
+  // Load todos from cookie
+  let todos = getTodosFromCookie();
+
+  // Display existing todos
+  todos.forEach(t => {
+    createTodoElement(t);
+  });
+
+  newBtn.addEventListener('click', () => {
+    const txt = prompt("Enter a new TO DO:");
+    if (txt && txt.trim() !== "") {
+      todos.unshift(txt.trim());
+      saveTodosToCookie(todos);
+      createTodoElement(txt.trim(), true);
+    }
+  });
+
+  function createTodoElement(text, insertOnTop = false) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    div.addEventListener('click', () => {
+      const sure = confirm("Do you really want to remove this TO DO?");
+      if (sure) {
+        // Remove from DOM and from cookie
+        ftList.removeChild(div);
+        todos = todos.filter(t => t !== text);
+        saveTodosToCookie(todos);
+      }
+    });
+
+    if (insertOnTop) {
+      ftList.insertAdjacentElement('afterbegin', div);
+    } else {
+      ftList.appendChild(div);
+    }
+  }
+
+  function saveTodosToCookie(tList) {
+    document.cookie = "todos=" + encodeURIComponent(JSON.stringify(tList)) + "; path=/";
+  }
+
+  function getTodosFromCookie() {
+    const match = document.cookie.match(/(^|;\s*)todos=([^;]+)/);
+    if (match) {
+      try {
+        return JSON.parse(decodeURIComponent(match[2]));
+      } catch(e) {
+        return [];
+      }
+    }
+    return [];
+  }
+
+})();
