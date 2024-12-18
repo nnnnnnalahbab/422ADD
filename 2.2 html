@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Example</title>
+    <link rel="stylesheet" href="parallax.css">
+</head>
+<body>
+    <!-- First Parallax Section -->
+    <section class="parallax" id="section1">
+        <div class="center-text">Welcome to the Mountains</div>
+    </section>
+
+    <!-- Black Block Section -->
+    <section class="black-block">
+        <div class="center-text">"The Earth has music for those who listen."</div>
+    </section>
+
+    <!-- Second Parallax Section -->
+    <section class="parallax" id="section2">
+        <div class="center-text">Serenity at the Forrest</div>
+    </section>
+</body>
+</html>
