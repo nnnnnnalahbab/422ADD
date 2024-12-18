@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNCF Sandwich Menu</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <header>
+        <h1>SNCF Sandwich Menu</h1>
+        <p>Choose your favorite sandwich combination.</p>
+    </header>
+    <main>
+        <div class="menu-container">
+            <label for="sandwich-dropdown">Select your sandwich:</label>
+            <select id="sandwich-dropdown">
+                <option value="" disabled selected>-- Select an option --</option>
+                <option value="ham">Ham & Cheese</option>
+                <option value="chicken">Chicken & Lettuce</option>
+                <option value="veggie">Veggie Delight</option>
+                <option value="club">Club Sandwich</option>
+            </select>
+        </div>
+    </main>
+    <footer>
+        <p>Enjoy your meal, courtesy of SNCF!</p>
+    </footer>
+</body>
+</html>
