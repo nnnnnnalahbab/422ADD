@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>It’s over 9000</title>
+<style>
+  body {
+    background: #eee;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 50px;
+  }
+  input, select {
+    margin: 5px;
+    padding: 5px;
+    font-size: 1rem;
+  }
+</style>
+</head>
+<body>
+<h1>Totally Messy Calculator</h1>
+<input type="text" id="left" placeholder="Left operand"/>
+<select id="op">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+  <option value="%">%</option>
+</select>
+<input type="text" id="right" placeholder="Right operand"/>
+<input type="submit" value="Try me!" id="go"/>
+
+<script>
+  const leftInput = document.getElementById('left');
+  const rightInput = document.getElementById('right');
+  const opSelect = document.getElementById('op');
+  const goBtn = document.getElementById('go');
+
+  // Alert every 30 seconds
+  setInterval(() => {
+    alert('Please, use me...');
+  }, 30000);
+
+  goBtn.addEventListener('click', function() {
+    const leftVal = leftInput.value.trim();
+    const rightVal = rightInput.value.trim();
+    const op = opSelect.value;
+
+    // Validate inputs: must be >= 0 integer
+    if(!isNonNegativeInteger(leftVal) || !isNonNegativeInteger(rightVal)){
+      alert("Error :(");
+      return;
+    }
+
+    const leftNum = parseInt(leftVal, 10);
+    const rightNum = parseInt(rightVal, 10);
+
+    // Check division or modulo by zero
+    if((op === '/' || op === '%') && rightNum === 0){
+      alert("It's over 9000!");
+      console.log("It's over 9000!");
+      return;
+    }
+
+    // Perform calculation
+    let result;
+    switch(op) {
+      case '+': result = leftNum + rightNum; break;
+      case '-': result = leftNum - rightNum; break;
+      case '*': result = leftNum * rightNum; break;
+      case '/': result = leftNum / rightNum; break;
+      case '%': result = leftNum % rightNum; break;
+    }
+
+    alert(result);
+    console.log(result);
+  });
+
+  function isNonNegativeInteger(val) {
+    // Check if it's a non-negative integer
+    return /^\d+$/.test(val);
+  }
+
+</script>
+</body>
+</html>
