@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exploding Balloon (jQuery)</title>
+    <link rel="stylesheet" href="balloon.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>🎈 Exploding Balloon 🎈</h1>
+    <p>Click the balloon to make it grow!</p>
+    <div id="balloon"></div>
+    <script>
+        $(function() {
+            const $balloon = $("#balloon");
+            let size = 200;
+            let colors = ["red", "green", "blue"];
+            let colorIndex = 0;
+
+            function updateBalloon() {
+                $balloon.css({
+                    width: size + "px",
+                    height: size + "px",
+                    backgroundColor: colors[colorIndex]
+                });
+            }
+
+            function growBalloon() {
+                size += 10;
+                if (size > 420) {
+                    // Explode condition
+                    size = 200;
+                    colorIndex = 0;
+                    alert("💥 The balloon exploded!");
+                } else {
+                    // Cycle through colors forward
+                    colorIndex = (colorIndex + 1) % colors.length;
+                }
+                updateBalloon();
+            }
+
+            function shrinkBalloon() {
+                if (size > 200) {
+                    size -= 5;
+                    // Reverse cycle colors
+                    colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+                    updateBalloon();
+                }
+            }
+
+            // Use jQuery for event handling
+            $balloon.on("click", growBalloon);
+            $balloon.on("mouseleave", shrinkBalloon);
+
+            // Initialize balloon state
+            updateBalloon();
+        });
+    </script>
+</body>
+</html>
