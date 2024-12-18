@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Card</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+    <div class="profile-card">
+        <!-- Title -->
+        <h1 class="card-title">User Profile Card</h1>
+
+        <!-- Invisible Table -->
+        <div class="info-table">
+            <div class="profile-picture">
+                <img src="profile.jpg" alt="Profile Picture">
+            </div>
+            <div class="user-info">
+                <h2 class="login-name">Nasser</h2>
+                <!-- Funny Richtofen Quote -->
+                <p class="description">"Ahh, the voices are so loud!"</p>
+                <p class="location">42 Abu Dhabi</p>
+            </div>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-icons">
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+        </div>
+
+        <!-- Contact Button -->
+        <div class="contact-button">
+            <button>Contact</button>
+        </div>
+    </div>
+</body>
+</html>
