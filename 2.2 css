@@ -1,0 +1,52 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Ensures smooth scrolling */
+}
+
+/* Parallax Sections */
+.parallax {
+    height: 100vh; /* Full screen height */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section1 {
+    background-image: url('1.jpg'); /* First image */
+}
+
+#section2 {
+    background-image: url('2.jpg'); /* Second image */
+}
+
+.center-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Black Block Section */
+.black-block {
+    height: 200px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+ 
