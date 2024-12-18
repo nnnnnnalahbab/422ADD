@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>To do or not to do (jQuery)</title>
+<style>
+  body {
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+  }
+
+  #ft_list {
+    margin-top: 20px;
+    display: inline-block;
+    text-align: left;
+    background: #fff;
+    min-width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  #ft_list div {
+    background: #fafafa;
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+
+  button {
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>My Super Messy TODO List</h1>
+<button id="newBtn">New</button>
+<div id="ft_list"></div>
+
+<script>
+$(function(){
+  const $ftList = $("#ft_list");
+  const $newBtn = $("#newBtn");
+  
+  let todos = getTodosFromCookie();
+
+  // Display existing todos
+  $.each(todos, function(_, t){
+    createTodoElement(t);
+  });
+
+  $newBtn.on("click", function(){
+    const txt = prompt("Enter a new TO DO:");
+    const trimmed = $.trim(txt);
+    if (trimmed) {
+      todos.unshift(trimmed);
+      saveTodosToCookie(todos);
+      createTodoElement(trimmed, true);
+    }
+  });
+
+  function createTodoElement(text, insertOnTop = false) {
+    // Create a jQuery element
+    const $div = $("<div>").text(text);
+
+    // Attach click handler using jQuery
+    $div.on("click", function(){
+      const sure = confirm("Do you really want to remove this TO DO?");
+      if (sure) {
+        $(this).remove();
+        todos = todos.filter(t => t !== text);
+        saveTodosToCookie(todos);
+      }
+    });
+
+    if (insertOnTop) {
+      $ftList.prepend($div);
+    } else {
+      $ftList.append($div);
+    }
+  }
+
+  function saveTodosToCookie(tList) {
+    document.cookie = "todos=" + encodeURIComponent(JSON.stringify(tList)) + "; path=/";
+  }
+
+  function getTodosFromCookie() {
+    const match = document.cookie.match(/(^|;\s*)todos=([^;]+)/);
+    if (match) {
+      try {
+        return JSON.parse(decodeURIComponent(match[2])) || [];
+      } catch(e) {
+        return [];
+      }
+    }
+    return [];
+  }
+});
+</script>
+</body>
+</html>
