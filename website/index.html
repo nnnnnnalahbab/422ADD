@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Seyed & Nasser - Gaming Tech Professionals</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script defer src="script.js"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" 
+      rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="S&N Logo"/>
+            <span>S&N</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#seyed-profile">Seyed</a></li>
+                <li><a href="#nasser-profile">Nasser</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="images/bo3-background.mp4" type="video/mp4"/>
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section fade-in">
+        <div class="content-container">
+            <h1 class="glitch-text" data-text="BUILDING BETTER PLAY">BUILDING BETTER PLAY</h1>
+            <p class="intro-text">
+                We make reliable gaming solutions using data. Inspired by games like Black Ops III, we focus on easy-to-use interfaces, fair matchmaking, and smooth performance. Our work fits different game types and grows with player needs.
+            </p>
+            <div class="profiles">
+                <!-- Seyed's Profile -->
+                <div class="profile-card">
+                    <img src="images/seyed.jpg" alt="Seyed Profile" class="profile-pic"/>
+                    <h2 class="name">
+                        SEYED<br/>PROJECTS & EXPERTISE
+                        <span class="easter-egg" data-quote="“Balancing code like a shot of vodka – strong and precise.” – Nikolai">
+                            <img src="images/icon_easter_egg.png" alt="Easter Egg Icon"/>
+                        </span>
+                    </h2>
+                    <h3 class="title">Full-Stack Engineer</h3>
+                    <p class="description">
+                        Seyed creates simple interfaces, strong backend systems, and features that scale. He ensures players stay connected and engaged.
+                    </p>
+                </div>
+                <!-- Nasser's Profile -->
+                <div class="profile-card">
+                    <img src="images/nasser.jpg" alt="Nasser Profile" class="profile-pic"/>
+                    <h2 class="name">
+                        NASSER<br/>PROJECTS & EXPERTISE
+                        <span class="easter-egg" data-quote="“May your codes be as twisted as my experiments.” – Richtofen">
+                            <img src="images/icon_easter_egg.png" alt="Easter Egg Icon"/>
+                        </span>
+                    </h2>
+                    <h3 class="title">Data & ML Specialist</h3>
+                    <p class="description">
+                        Nasser improves matchmaking, balances game systems, and turns data into useful insights.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seyed's Profile -->
+    <section id="seyed-profile" class="section profile-section fade-in">
+        <div class="content-container">
+            <h2 class="section-title glitch-text" data-text="SEYED: PROJECTS & EXPERTISE">SEYED: PROJECTS & EXPERTISE</h2>
+            <div class="experience-skills">
+                <div class="experience">
+                    <h3 class="sub-heading">Projects</h3>
+                    <div class="experience-item">
+                        <h4>Fast FPS HUD</h4>
+                        <p>Improved menu flow and loadout selection for a competitive shooter.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Co-op Backend</h4>
+                        <p>Built stable microservices for matchmaking and player data in a co-op RPG.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Cross-Platform Sync</h4>
+                        <p>Optimized server code for quick inventory updates across multiple platforms.</p>
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <h3 class="sub-heading">Expertise</h3>
+                    <div class="skill">
+                        <h4>Front-End</h4>
+                        <p>React, WebGL, Modern CSS</p>
+                    </div>
+                    <div class="skill">
+                        <h4>Backend</h4>
+                        <p>Node.js, GraphQL, Kubernetes</p>
+                    </div>
+                    <div class="skill">
+                        <h4>Cloud</h4>
+                        <p>AWS, CI/CD, Load Balancing</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading" style="margin-top: 3em;">Portfolio</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/project1.jpg" alt="Project 1" loading="lazy"/>
+                    <h4>Competitive UI Redesign</h4>
+                    <p>Streamlined menus, reducing wait times.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/project2.jpg" alt="Project 2" loading="lazy"/>
+                    <h4>RPG Interface Tools</h4>
+                    <p>Created widgets for gear and party management.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/project3.jpg" alt="Project 3" loading="lazy"/>
+                    <h4>Open-World Transit</h4>
+                    <p>Improved travel loading times for large maps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nasser's Profile -->
+    <section id="nasser-profile" class="section profile-section fade-in">
+        <div class="content-container">
+            <h2 class="section-title glitch-text" data-text="NASSER: PROJECTS & EXPERTISE">NASSER: PROJECTS & EXPERTISE</h2>
+            <div class="experience-skills">
+                <div class="experience">
+                    <h3 class="sub-heading">Projects</h3>
+                    <div class="experience-item">
+                        <h4>Smart Matchmaking</h4>
+                        <p>Balanced lobbies with skill-based data models.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Economy Balancing</h4>
+                        <p>Refined reward rates for better player progression.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Retention Analysis</h4>
+                        <p>Used ML to predict churn and guide updates.</p>
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <h3 class="sub-heading">Expertise</h3>
+                    <div class="skill">
+                        <h4>Data & ML</h4>
+                        <p>Python, TensorFlow, PyTorch</p>
+                    </div>
+                    <div class="skill">
+                        <h4>Analytics</h4>
+                        <p>Hadoop, Spark, SQL</p>
+                    </div>
+                    <div class="skill">
+                        <h4>Visualization</h4>
+                        <p>D3.js, Power BI, Dashboards</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-heading" style="margin-top: 3em;">Portfolio</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/project1.jpg" alt="Project 1" loading="lazy"/>
+                    <h4>Skill-Based Rooms</h4>
+                    <p>Improved fairness in team battles.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/project2.jpg" alt="Project 2" loading="lazy"/>
+                    <h4>Behavior Analysis</h4>
+                    <p>Identified trends to enhance quest design.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/project3.jpg" alt="Project 3" loading="lazy"/>
+                    <h4>Loot Optimization</h4>
+                    <p>Tuned drops for long-term engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section fade-in">
+        <div class="content-container">
+            <h2 class="section-title glitch-text" data-text="CONTACT US">CONTACT US</h2>
+            <p>
+                Interested in enhancing your gaming experience? Get in touch. While these links are mockups, they represent your first step towards better play.
+            </p>
+            <div class="contact-links">
+                <a href="#" class="contact-link" aria-label="Email Us">
+                    <span>Email Us</span>
+                </a>
+                <a href="#" class="contact-link" aria-label="LinkedIn">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="#" class="contact-link" aria-label="Portfolio">
+                    <span>Portfolio</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
